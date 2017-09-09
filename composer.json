@@ -1,0 +1,8 @@
+{
+    "require": {
+        "setasign/fpdf": "^1.8",
+        "twbs/bootstrap": "^3.3",
+        "fortawesome/font-awesome": "^4.7",
+        "components/jquery": "^3.2"
+    }
+}
