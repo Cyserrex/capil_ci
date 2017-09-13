@@ -56,9 +56,9 @@
                       <li><a href="<?=base_url()?>utama/kecamatan">Jumlah Kecamatan</a></li>
                       <li><a href="<?=base_url()?>utama/kelurahan">Jumlah Kelurahan</a></li>
                       <li><a href="<?=base_url()?>utama/agama">Jumlah Agama</a></li>
-                      <li><a href="index_lhr.html">Jumlah Kelahiran & Kematian</a></li>
-                      <li><a href="index_status.html">Jumlah Status</a></li>
-                      <li><a href="index_wni.html">Jumlah WNA dan WNI</a></li>
+                      <li><a href="<?=base_url()?>utama/kelahiran">Jumlah Kelahiran & Kematian</a></li>
+                      <li><a href="<?=base_url()?>utama/status">Jumlah Status</a></li>
+                      <li><a href="<?=base_url()?>utama/wni">Jumlah WNA dan WNI</a></li>
                       <li><a href="<?=base_url()?>utama/kitas">Jumlah KITAS</a></li>
                     </ul>
                   </li>

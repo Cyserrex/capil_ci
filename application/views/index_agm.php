@@ -56,6 +56,7 @@
                     </div>
                   </div>
                 </div>
+                </div>
 
                 <div class="col-md-8">
                 <span class="ct-chart ct-golden-section"></span>
@@ -86,7 +87,7 @@
                         </div>
                         <div class="col-xs-7">
                           <div class="progress progress_sm">
-                            <div class="progress-bar" style="background-color: #59922B;" role="progressbar" data-transitiongoal="<?php echo $persen_islam ?>"></div>
+                            <div class="progress-bar" style="background-color: #3F78FF;" role="progressbar" data-transitiongoal="<?php echo $persen_islam ?>"></div>
                           </div>
                         </div>
                         <div class="col-xs-2 more_info">
@@ -100,7 +101,7 @@
                         </div>
                         <div class="col-xs-7">
                           <div class="progress progress_sm">
-                            <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_kristen ?>"></div>
+                            <div class="progress-bar" style="background-color: #F25E5E;" role="progressbar" data-transitiongoal="<?php echo $persen_kristen ?>"></div>
                           </div>
                         </div>
                         <div class="col-xs-2 more_info">
@@ -114,7 +115,7 @@
                         </div>
                         <div class="col-xs-7">
                           <div class="progress progress_sm">
-                            <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_katholik ?>"></div>
+                            <div class="progress-bar" style="background-color: #F4C63D;" role="progressbar" data-transitiongoal="<?php echo $persen_katholik ?>"></div>
                           </div>
                         </div>
                         <div class="col-xs-2 more_info">
@@ -128,7 +129,7 @@
                         </div>
                         <div class="col-xs-7">
                           <div class="progress progress_sm">
-                            <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_hindu ?>"></div>
+                            <div class="progress-bar" style="background-color: #D17905;" role="progressbar" data-transitiongoal="<?php echo $persen_hindu ?>"></div>
                           </div>
                         </div>
                         <div class="col-xs-2 more_info">
@@ -142,7 +143,7 @@
                         </div>
                         <div class="col-xs-7">
                           <div class="progress progress_sm">
-                            <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_budha ?>"></div>
+                            <div class="progress-bar" style="background-color: #453D3F;" role="progressbar" data-transitiongoal="<?php echo $persen_budha ?>"></div>
                           </div>
                         </div>
                         <div class="col-xs-2 more_info">
@@ -156,7 +157,7 @@
                         </div>
                         <div class="col-xs-7">
                           <div class="progress progress_sm">
-                            <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_khonghucu ?>"></div>
+                            <div class="progress-bar" style="background-color: #59922B;" role="progressbar" data-transitiongoal="<?php echo $persen_khonghucu ?>"></div>
                           </div>
                         </div>
                         <div class="col-xs-2 more_info">
@@ -170,7 +171,7 @@
                         </div>
                         <div class="col-xs-7">
                           <div class="progress progress_sm">
-                            <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_kepercayaan ?>"></div>
+                            <div class="progress-bar" style="background-color: #0544D3;" role="progressbar" data-transitiongoal="<?php echo $persen_kepercayaan ?>"></div>
                           </div>
                         </div>
                         <div class="col-xs-2 more_info">
@@ -179,9 +180,8 @@
                       </div>                    
 
                     </div>                 
-
                 </div>
-                
+                <div class="clearfix"></div>
             </div>
 
           </div>
@@ -205,29 +205,27 @@
     <script src="<?=base_url()?>vendor/cart/chartist.js"></script>
 
     <script type="text/javascript">
-      new Chartist.Line('.ct-chart', {
-        labels: [2012, 2013, 2014, 2015, 2016, 2017],
-        series: [
-          [700, 800, 900, 1000, 1100, 1200],
-          [600, 700, 800, 900, 1000, 1100],
-          [600, 700, 800, 900, 1000, 1150],
-          [600, 700, 800, 900, 1000, 1100],
-          [600, 700, 800, 900, 1000, 1000],
-          [600, 700, 800, 900, 1000, 1150],
-          [600, 700, 800, 900, 1000, 900],
-        ]
-      }, {
-        fullWidth: true,
-        
-        axisY: {
+new Chartist.Line('.ct-chart', {
+  labels: ['2015', '2016', '2017'],
+  series: [
+    [<?php echo $ISLAM ?>, 0, 0],
+    [<?php echo $KRISTEN ?>, 0, 0],
+    [<?php echo $KATHOLIK ?>, 0, 0],
+    [<?php echo $HINDU ?>, 0, 0],
+    [<?php echo $BUDHA ?>, 0, 0],
+    [<?php echo $KHONGHUCU ?>, 0, 0],
+    [<?php echo $KEPERCAYAAN ?>, 0, 0]
+  ],
+}, {
+  fullWidth: true,
+  chartPadding: {
+    right: 40
+  },
+  axisY: {
           onlyInteger: false,
-          offset: 50
-        },
-        //Untuk Mempaskan Tahun
-        chartPadding: {
-          right: 50
+          offset: 45
         }
-      });
+});
     </script>
   
   </body>

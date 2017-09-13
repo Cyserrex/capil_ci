@@ -36,7 +36,7 @@ class Utama extends CI_Controller {
     }
 	public function kecamatan()
 	{
-		$data = $this->data_penduduk_mod->get_data_rt_perkel('SUNGAI MIAI');
+		$data = $this->data_penduduk_mod->get_data_rt_perkec('BANJARMASIN UTARA');
 		$kec = $data->row_array();
 
 		$ats = array ('TITLE'=> 'Kecamatan | Catatan Sipil');
@@ -47,7 +47,13 @@ class Utama extends CI_Controller {
     }
 	public function kelurahan()
 	{
-        $this->load->view('index_kel');
+		$data = $this->data_penduduk_mod->get_data_rt_perkel('SUNGAI MIAI');
+
+		$ats = array ('TITLE'=> 'Kelurahan | Catatan Sipil');
+
+        $this->load->view('template/atas', $ats);
+        $this->load->view('index_kel', $data);
+        $this->load->view('template/bawah');
     }
 	public function kitas()
 	{

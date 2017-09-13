@@ -2,5 +2,8 @@
 	margin-right: 10px;
 }
 .agama {
-        width: auto;
-    }
+    width: auto;
+}
+.x_title span {
+	color: #73879c !important;
+}

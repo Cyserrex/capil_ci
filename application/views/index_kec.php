@@ -52,6 +52,7 @@
                     </div>
                   </div>
                 </div>
+                </div>
 
                 <div class="col-md-9 col-sm-9 col-xs-12">
                 <div class="ct-chart ct-golden-section"></div>
@@ -130,8 +131,8 @@
                     </div>
                   </div>
 
-                <div class="clearfix"></div>
               </div>
+              <div class="clearfix"></div>
             </div>
 
           </div>

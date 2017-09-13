@@ -28,10 +28,9 @@
 
                 <div class="row x_title">
                   <div class="col-md-6">
-                    <h3>Penduduk <small>Grafik pertumbuhan penduduk</small></h3>
+                    <h3><i class="fa fa-line-chart"></i> Penduduk <small>Grafik pertumbuhan penduduk</small></h3>
                   </div>
-                <div class="pull-right">
-                  
+                <div class="pull-right">                  
                   <div class="col-md-12">
                     <div style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
                       <i class="fa fa-calendar"></i>
@@ -49,8 +48,7 @@
                 </div>
 
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                <div class="ct-chart ct-golden-section"></div>
-                
+                <div class="ct-chart ct-golden-section"></div>               
 
                   <!--div id="chart_plot_01" class="demo-placeholder"></div-->
                 </div>
@@ -82,210 +80,212 @@
                       </div>
                     </div>
                   </div>
-                  
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
 
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="dashboard_graph">
+                <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="x_title">
+                          <h2>Pendidikan</h2>
+                          <div class="clearfix"></div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-6">
+                          <div>
+                            <p>Tidak/Belum Sekolah</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40" style="height: 20px !important;">40%</div>
+                              </div>
+
+                            </div>
+                          </div>
+                          <div>
+                            <p>Belum tamat SD</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>Tamat SD</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>SLTP</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>SLTA</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>D1 dan D2</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>D3</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="30" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>S1</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>S2</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>S3</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="90" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3 col-xs-12" style="margin-left: 5px;">
+                        <div class="x_title">
+                          <h2>Usia</h2>
+                          <div class="clearfix"></div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-6">
+                          <div>
+                            <p>Usia 0-4 thn</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40" style="height: 20px !important;">40%</div>
+                              </div>
+
+                            </div>
+                          </div>
+                          <div>
+                            <p>Usia 5-9 thn</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>Usia 10-14 thn</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>Usia 15-19 thn</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>Usia 20-24 thn</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>Usia 25-29 thn</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>Usia 30-34 thn</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="30" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>Usia 35-39 thn</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>Usia 40-44 thn</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div>
+                            <p>Usia 45-49 thn</p>
+                            <div class="">
+                              <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="90" style="height: 20px !important;">60%</div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                </div>
+
+                <div class="col-md-5 col-sm-5 col-xs-12" style="margin-left: 5px;">
+                  <div class="x_title">
+                    <h2>Pie</h2>
+                    <div class="clearfix"></div>
+                  </div>
+                      <div class="ct-chart2 ct-major-second"></div>
                 </div>
 
                 <div class="clearfix"></div>
               </div>
             </div>
-
-          </div>
-          <div class="row">
-
-            <div class="col-md-3 col-sm-3 col-xs-12 bg-success">
-                  <div class="x_title">
-                    <h2>Pendidikan</h2>
-                    <div class="clearfix"></div>
-                  </div>
-
-                  <div class="col-md-12 col-sm-12 col-xs-6">
-                    <div>
-                      <p>Tidak/Belum Sekolah</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40" style="height: 20px !important;">40%</div>
-                        </div>
-
-                      </div>
-                    </div>
-                    <div>
-                      <p>Belum tamat SD</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>Tamat SD</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>SLTP</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>SLTA</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>D1 dan D2</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>D3</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="30" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>S1</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>S2</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>S3</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="90" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-
-            <div class="col-md-3 col-sm-3 col-xs-12 bg-success" style="margin-left: 5px;">
-                  <div class="x_title">
-                    <h2>Usia</h2>
-                    <div class="clearfix"></div>
-                  </div>
-
-                  <div class="col-md-12 col-sm-12 col-xs-6">
-                    <div>
-                      <p>Usia 0-4 thn</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40" style="height: 20px !important;">40%</div>
-                        </div>
-
-                      </div>
-                    </div>
-                    <div>
-                      <p>Usia 5-9 thn</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>Usia 10-14 thn</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>Usia 15-19 thn</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>Usia 20-24 thn</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>Usia 25-29 thn</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>Usia 30-34 thn</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="30" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>Usia 35-39 thn</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>Usia 40-44 thn</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>Usia 45-49 thn</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="90" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-
-          </div>
-          <div class="col-md-5 col-sm-5 col-xs-12 bg-success" style="margin-left: 5px;">
-            <div class="x_title">
-              <h2>Pie</h2>
-              <div class="clearfix"></div>
-            </div>
-                <div class="ct-chart2 ct-major-second"></div>
           </div>
 
-
-          </div>
+          
 
           <br />
 

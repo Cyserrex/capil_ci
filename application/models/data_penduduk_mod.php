@@ -21,19 +21,25 @@ class data_penduduk_mod extends CI_Model {
 				SELECT NO_RT FROM V_CAPIL_KK WHERE NAMA_KEL='$kel' GROUP BY NO_RT
 			) S
 			ORDER BY NO_RT";
-		return $this->db->query($q);
+		$data1 = $this->db->query($q);
+		$data1_ = $data1->row_array();
+
+		$q="SELECT COUNT(*) AS TOTAL_KEL FROM V_CAPIL_KEL";
+		$data2 = $this->db->query($q);
+		$data2_ = $data2->row_array();
+
+		return array('TOTAL_RT' => $data1_['TOTAL_RT'], 'TOTAL_KEL' => $data2_['TOTAL_KEL']);
 	}
-	function get_data_rt_perkec($kec=""){
-		$q="SELECT SUM(TOTAL_RT) AS TOT_RT FROM
+	function get_data_rt_perkec($kec="BANJARMASIN UTARA"){
+		$q="SELECT SUM(TOTAL_RT) AS TOTAL_RT FROM
 			(
 				SELECT COUNT(*) AS TOTAL_RT, NAMA_KEL FROM
 				(
 					SELECT NAMA_KEL, NO_RT FROM V_CAPIL_KK WHERE NAMA_KEC='$kec'
 				) S
 				GROUP BY NAMA_KEL
-			)"
+			)";
 			return $this->db->query($q);
 	}
-
 }
 ?>
