@@ -54,8 +54,25 @@ class Utama extends CI_Controller {
     }
 	public function kecamatan()
 	{
-		$data = $this->data_penduduk_mod->get_data_rt_perkec('BANJARMASIN UTARA');
-		$kec = $data->row_array();
+		$data = $this->data_penduduk_mod->get_data_kec();
+		$kecamatan = $data->row_array();
+
+		$kec = array ('BJM_UTARA' => $kecamatan['BJM_UTARA'],
+					'BJM_SELATAN' => $kecamatan['BJM_SELATAN'],
+					'BJM_TIMUR' => $kecamatan['BJM_TIMUR'],
+					'BJM_TENGAH' => $kecamatan['BJM_TENGAH'],
+					'BJM_BARAT' => $kecamatan['BJM_BARAT'],
+					'BJM_BARAT_LK' => $this->data_penduduk_mod->get_data_jk_kec('BANJARMASIN BARAT')->LK,
+					'BJM_BARAT_PR' => $this->data_penduduk_mod->get_data_jk_kec('BANJARMASIN BARAT')->PRM,
+					'BJM_TIMUR_LK' => $this->data_penduduk_mod->get_data_jk_kec('BANJARMASIN TIMUR')->LK,
+					'BJM_TIMUR_PR' => $this->data_penduduk_mod->get_data_jk_kec('BANJARMASIN TIMUR')->PRM,
+					'BJM_UTARA_LK' => $this->data_penduduk_mod->get_data_jk_kec('BANJARMASIN UTARA')->LK,
+					'BJM_UTARA_PR' => $this->data_penduduk_mod->get_data_jk_kec('BANJARMASIN UTARA')->PRM,
+					'BJM_SELATAN_LK' => $this->data_penduduk_mod->get_data_jk_kec('BANJARMASIN SELATAN')->LK,
+					'BJM_SELATAN_PR' => $this->data_penduduk_mod->get_data_jk_kec('BANJARMASIN SELATAN')->PRM,
+					'BJM_TENGAH_LK' => $this->data_penduduk_mod->get_data_jk_kec('BANJARMASIN TENGAH')->LK,
+					'BJM_TENGAH_PR' => $this->data_penduduk_mod->get_data_jk_kec('BANJARMASIN TENGAH')->PRM,
+			);
 
 		$ats = array ('TITLE'=> 'Kecamatan | Catatan Sipil');
 

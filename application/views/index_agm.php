@@ -45,13 +45,15 @@
                   <div class="col-md-12">
                     <div style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
                       <i class="fa fa-calendar"></i>
+
                       <label for="exampleSelect1">Tahun</label>
                       <select class="form-control" id="exampleSelect1">
-                        <option>2013</option>
-                        <option>2014</option>
-                        <option>2015</option>
-                        <option>2016</option>
-                        <option>2017</option>
+                      <?php
+                      for ($thn_now=date('Y');$thn_now>=2002;$thn_now--)
+                      {
+                        echo "<option value='".$thn_now."'>".$thn_now."</option>";
+                      }
+                      ?>
                       </select>
                     </div>
                   </div>
@@ -198,17 +200,20 @@
         <!-- /footer content -->
       </div>
     </div>
+    <script type="text/javascript">
+    $('select').on('change', function() {
+      alert( this.value );
+    })
+    </script>
 
-        <script src="<?=base_url()?>vendor/highcharts/code/highcharts.js"></script>
+    <script src="<?=base_url()?>vendor/highcharts/code/highcharts.js"></script>
     <script src="<?=base_url()?>vendor/highcharts/code/modules/exporting.js"></script>
-
     <script type="text/javascript">
     Highcharts.setOptions({
         lang: {
             numericSymbols: [' Ribu', ' Juta']
         }
     });
-
     Highcharts.chart('container', {
         chart: {
             type: 'column'
@@ -227,11 +232,11 @@
         yAxis: {
             min: 0,
             title: {
-                text: 'Jumlah Penduduk'
+                text: 'Jumlah Agama'
             }
         },
         tooltip: {
-            headerFormat: '<span style="font-size:10px">Tahun <b>{point.key}</b></span><table>',
+            headerFormat: '<span style="font-size:10px">Tahun {point.key}</span><table>',
             pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
                 '<td style="padding:0"><b>{point.y:.0f}</b></td></tr>',
             footerFormat: '</table>',

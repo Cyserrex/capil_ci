@@ -8,7 +8,7 @@
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-map"></i> Total <b>RT</b> /Kecamatan</span>
-              <div class="count green"><?php echo $TOTAL_RT ?></div>
+              <div class="count green">29</div>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-map"></i> Total <b>RW</b> /Kecamatan</span>
@@ -55,10 +55,8 @@
                 </div>
 
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                <div class="ct-chart ct-golden-section"></div>
-                
-
-                  <!--div id="chart_plot_01" class="demo-placeholder"></div-->
+                  <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+                  <div id="container2" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
                   <div class="x_title">
@@ -149,26 +147,120 @@
         <!-- /footer content -->
       </div>
     </div>
-    <script src="<?=base_url()?>vendor/cart/chartist.js"></script>
+    <script src="<?=base_url()?>vendor/highcharts/code/highcharts.js"></script>
+    <script src="<?=base_url()?>vendor/highcharts/code/modules/exporting.js"></script>
     <script type="text/javascript">
-      new Chartist.Line('.ct-chart', {
-        labels: [2012, 2013, 2014, 2015, 2016, 2017],
-        series: [
-          [700, 800, 900, 1000, 1100, 1200],
-          [600, 700, 800, 900, 1000, 1100],
-        ]
-      }, {
-        fullWidth: true,
-        
-        axisY: {
-          onlyInteger: false,
-          offset: 50
-        },
-        //Untuk Mempaskan Tahun
-        chartPadding: {
-          right: 50
+    Highcharts.setOptions({
+        lang: {
+            numericSymbols: [' Ribu', ' Juta']
         }
-      });
+    });
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: false
+        },
+        xAxis: {
+            categories: [
+                '2015',
+                '2016',
+                '2017'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Jumlah Penduduk'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">Tahun {point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.0f}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Banjarmasin Selatan',
+            data: [<?php echo $BJM_SELATAN ?>, 0, 0]
+
+        }, {
+            name: 'Banjarmasin Timur',
+            data: [<?php echo $BJM_TIMUR ?>, 0, 0]
+
+        }, {
+            name: 'Banjarmasin Barat',
+            data: [<?php echo $BJM_BARAT ?>, 0, 0]
+
+        }, {
+            name: 'Banjarmasin Utara',
+            data: [<?php echo $BJM_UTARA ?>, 0, 0]
+
+        }, {
+            name: 'Banjarmasin Tengah',
+            data: [<?php echo $BJM_TENGAH ?>, 0, 0]
+
+        }]
+    });
+
+    Highcharts.chart('container2', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: false
+        },
+        xAxis: {
+            categories: [
+                'Banjarmasin Selatan',
+                'Banjarmasin Timur',
+                'Banjarmasin Barat',
+                'Banjarmasin Utara',
+                'Banjarmasin Tengah'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Jumlah Penduduk'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">Tahun {point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.0f}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Laki-laki',
+            data: [<?php echo $BJM_SELATAN_LK ?>, <?php echo $BJM_TIMUR_LK ?>, <?php echo $BJM_BARAT_LK ?>, <?php echo $BJM_UTARA_LK ?>, <?php echo $BJM_TENGAH_LK ?>]
+
+        }, {
+            name: 'Perempuan',
+            data: [<?php echo $BJM_SELATAN_PR ?>, <?php echo $BJM_TIMUR_PR ?>, <?php echo $BJM_BARAT_PR ?>, <?php echo $BJM_UTARA_PR ?>, <?php echo $BJM_TENGAH_PR ?>]
+
+        }]
+    });
     </script>
+  
   
   </body>
