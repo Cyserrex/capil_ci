@@ -48,10 +48,7 @@
                 </div>
                 </div>
                 <div class="col-md-8 col-sm-9 col-xs-12">
-                <div class="ct-chart ct-golden-section"></div>
-                
-
-                  <!--div id="chart_plot_01" class="demo-placeholder"></div-->
+                <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
                 </div>
                 
                 <div class="col-md-4 col-sm-3 col-xs-12 bg-white">
@@ -143,26 +140,68 @@
       </div>
     </div>
 
-    <script src="<?=base_url()?>vendor/cart/chartist.js"></script>
+    <script src="<?=base_url()?>vendor/highcharts/code/highcharts.js"></script>
+    <script src="<?=base_url()?>vendor/highcharts/code/modules/exporting.js"></script>
 
     <script type="text/javascript">
-    new Chartist.Line('.ct-chart', {
-      labels: ['2015', '2016', '2017'],
-      series: [
-        [<?php echo $BK ?>, 0, 0],
-        [<?php echo $K ?>, 0, 0],
-        [<?php echo $CH ?>, 0, 0],
-        [<?php echo $CM ?>, 0, 0],
-      ],
-    }, {
-      fullWidth: true,
-      chartPadding: {
-        right: 40
-      },
-      axisY: {
-              onlyInteger: false,
-              offset: 45
+    Highcharts.setOptions({
+        lang: {
+            numericSymbols: [' Ribu', ' Juta']
+        }
+    });
+
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: false
+        },
+        xAxis: {
+            categories: [
+                '2015',
+                '2016',
+                '2017'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Jumlah Penduduk'
             }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">Tahun <b>{point.key}</b></span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.0f}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Belum Kawin',
+            data: [<?php echo $BK ?>, 0, 0]
+
+        }, {
+            name: 'Kawin',
+            data: [<?php echo $K ?>, 0, 0]
+
+        }, {
+            name: 'Cerai Hidup',
+            data: [<?php echo $CH ?>, 0, 0]
+
+        }, {
+            name: 'Cerai Mati',
+            data: [<?php echo $CM ?>, 0, 0]
+
+        }]
     });
     </script>
   
