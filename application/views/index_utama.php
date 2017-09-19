@@ -28,7 +28,7 @@
 
                 <div class="row x_title">
                   <div class="col-md-6">
-                    <h3><i class="fa fa-line-chart"></i> Penduduk <small>Grafik pertumbuhan penduduk</small></h3>
+                    <h3 style="padding-top: 7%;"><i class="fa fa-line-chart"></i> Penduduk <small>Grafik pertumbuhan penduduk</small></h3>
                   </div>
                 <div class="pull-right">                  
                   <div class="col-md-12">
@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
                   <div class="x_title">
-                    <h2>Perbandingan</h2>
+                    <h2><i class="fa fa-exchange"></i> Perbandingan</h2>
                     <div class="clearfix"></div>
                   </div>
                   <?php
@@ -91,90 +91,151 @@
               <div class="dashboard_graph">
                 <div class="col-md-3 col-sm-3 col-xs-12">
                         <div class="x_title">
-                          <h2>Pendidikan</h2>
+                          <h2><i class="fa fa-graduation-cap"></i> Pendidikan</h2>
                           <div class="clearfix"></div>
                         </div>
-
+                        <?php
+                        $TOTAL              = $BLM_SEKOLAH+$BLM_TMT_SD+$TMT_SD+$SLTP+$SLTA+$D_I_II+$DIII+$SI+$SII+$SIII;
+                        $persen_blm_sekolah = round(($BLM_SEKOLAH / $TOTAL) * 100,1);
+                        $persen_blm_tmt_sd  = round(($BLM_TMT_SD / $TOTAL) * 100,1);
+                        $persen_tmt_sd      = round(($TMT_SD / $TOTAL) * 100,1);
+                        $persen_sltp        = round(($SLTP / $TOTAL) * 100,1);
+                        $persen_slta        = round(($SLTA / $TOTAL) * 100,1);
+                        $persen_d_i_ii      = round(($D_I_II / $TOTAL) * 100,1);
+                        $persen_diii        = round(($DIII / $TOTAL) * 100,1);
+                        $persen_si          = round(($SI / $TOTAL) * 100,1);
+                        $persen_sii         = round(($SII / $TOTAL) * 100,1);
+                        $persen_siii        = round(($SIII / $TOTAL) * 100,1);
+                        ?>
                         <div class="col-md-12 col-sm-12 col-xs-6">
                           <div>
                             <p>Tidak/Belum Sekolah</p>
-                            <div class="">
+                            <div class="row">
+                            <div class="col-md-8">
                               <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40" style="height: 20px !important;">40%</div>
-                              </div>
-
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_blm_sekolah ?>" style="height: 20px !important;"></div>
+                              </div>                              
+                            </div>
+                            <div class="col-md-2 more_info">
+                                  <span><?php echo number_format($BLM_SEKOLAH, 0, ',', '.'); ?></span>
+                            </div>
                             </div>
                           </div>
                           <div>
-                            <p>Belum tamat SD</p>
-                            <div class="">
+                            <p>Belum Tamat SD</p>
+                            <div class="row">
+                            <div class="col-md-8">
                               <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                              </div>
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_blm_tmt_sd ?>" style="height: 20px !important;"></div>
+                              </div>                              
+                            </div>
+                            <div class="col-md-2 more_info">
+                                  <span><?php echo number_format($BLM_TMT_SD, 0, ',', '.'); ?></span>
+                            </div>
                             </div>
                           </div>
                           <div>
                             <p>Tamat SD</p>
-                            <div class="">
+                            <div class="row">
+                            <div class="col-md-8">
                               <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                              </div>
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_tmt_sd ?>" style="height: 20px !important;"></div>
+                              </div>                              
+                            </div>
+                            <div class="col-md-2 more_info">
+                                  <span><?php echo number_format($TMT_SD, 0, ',', '.'); ?></span>
+                            </div>
                             </div>
                           </div>
                           <div>
-                            <p>SLTP</p>
-                            <div class="">
+                            <p>Tamat SLTP</p>
+                            <div class="row">
+                            <div class="col-md-8">
                               <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                              </div>
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_sltp ?>" style="height: 20px !important;"></div>
+                              </div>                              
+                            </div>
+                            <div class="col-md-2 more_info">
+                                  <span><?php echo number_format($SLTP, 0, ',', '.'); ?></span>
+                            </div>
                             </div>
                           </div>
                           <div>
-                            <p>SLTA</p>
-                            <div class="">
+                            <p>Tamat SLTA</p>
+                            <div class="row">
+                            <div class="col-md-8">
                               <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                              </div>
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_slta ?>" style="height: 20px !important;"></div>
+                              </div>                              
+                            </div>
+                            <div class="col-md-2 more_info">
+                                  <span><?php echo number_format($SLTA, 0, ',', '.'); ?></span>
+                            </div>
                             </div>
                           </div>
                           <div>
-                            <p>D1 dan D2</p>
-                            <div class="">
+                            <p>Tamat DI/DII</p>
+                            <div class="row">
+                            <div class="col-md-8">
                               <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40" style="height: 20px !important;">60%</div>
-                              </div>
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_d_i_ii ?>" style="height: 20px !important;"></div>
+                              </div>                              
+                            </div>
+                            <div class="col-md-2 more_info">
+                                  <span><?php echo number_format($D_I_II, 0, ',', '.'); ?></span>
+                            </div>
                             </div>
                           </div>
                           <div>
-                            <p>D3</p>
-                            <div class="">
+                            <p>Tamat DIII</p>
+                            <div class="row">
+                            <div class="col-md-8">
                               <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="30" style="height: 20px !important;">60%</div>
-                              </div>
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_diii ?>" style="height: 20px !important;"></div>
+                              </div>                              
+                            </div>
+                            <div class="col-md-2 more_info">
+                                  <span><?php echo number_format($DIII, 0, ',', '.'); ?></span>
+                            </div>
                             </div>
                           </div>
                           <div>
-                            <p>S1</p>
-                            <div class="">
+                            <p>Tamat S1</p>
+                            <div class="row">
+                            <div class="col-md-8">
                               <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50" style="height: 20px !important;">60%</div>
-                              </div>
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_si ?>" style="height: 20px !important;"></div>
+                              </div>                              
+                            </div>
+                            <div class="col-md-2 more_info">
+                                  <span><?php echo number_format($SI, 0, ',', '.'); ?></span>
+                            </div>
                             </div>
                           </div>
                           <div>
-                            <p>S2</p>
-                            <div class="">
+                            <p>Tamat S2</p>
+                            <div class="row">
+                            <div class="col-md-8">
                               <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                              </div>
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_sii ?>" style="height: 20px !important;"></div>
+                              </div>                              
+                            </div>
+                            <div class="col-md-2 more_info">
+                                  <span><?php echo number_format($SII, 0, ',', '.'); ?></span>
+                            </div>
                             </div>
                           </div>
                           <div>
-                            <p>S3</p>
-                            <div class="">
+                            <p>Tamat S3</p>
+                            <div class="row">
+                            <div class="col-md-8">
                               <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="90" style="height: 20px !important;">60%</div>
-                              </div>
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $persen_siii ?>" style="height: 20px !important;"></div>
+                              </div>                              
+                            </div>
+                            <div class="col-md-2 more_info">
+                                  <span><?php echo number_format($SIII, 0, ',', '.'); ?></span>
+                            </div>
                             </div>
                           </div>
                         </div>
@@ -182,7 +243,7 @@
 
                 <div class="col-md-3 col-sm-3 col-xs-12" style="margin-left: 5px;">
                         <div class="x_title">
-                          <h2>Usia</h2>
+                          <h2><i class="fa fa-calendar-o"></i> Usia</h2>
                           <div class="clearfix"></div>
                         </div>
 
@@ -191,7 +252,7 @@
                             <p>Usia 0-4 thn</p>
                             <div class="">
                               <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40" style="height: 20px !important;">40%</div>
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40" style="height: 20px !important;"><?php echo '1'; ?></div>
                               </div>
 
                             </div>
@@ -274,7 +335,7 @@
 
                 <div class="col-md-5 col-sm-5 col-xs-12" style="margin-left: 5px;">
                   <div class="x_title">
-                    <h2>Pie</h2>
+                    <h2><i class="fa fa-pie-chart"></i> Pie</h2>
                     <div class="clearfix"></div>
                   </div>
                       <div class="ct-chart2 ct-major-second"></div>
@@ -313,8 +374,6 @@
           [600, 700, 800, 900, 1000, 1100],
         ]
       }, {
-        width: 800,
-        height: 400,
         fullWidth: true,
         
         axisY: {

@@ -25,7 +25,7 @@
 
                 <div class="row x_title">
                   <div class="col-md-6">
-                    <h3><i class="fa fa-line-chart"></i> Penduduk <small>Grafik pertumbuhan penduduk per Kecamatan</small></h3>
+                    <h3 style="padding-top: 7%;"><i class="fa fa-line-chart"></i> Penduduk <small>Grafik pertumbuhan penduduk per Kecamatan</small></h3>
                   </div>
                 <div class="pull-right">
                   <div class="col-md-7">
@@ -59,6 +59,34 @@
                 
 
                   <!--div id="chart_plot_01" class="demo-placeholder"></div-->
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
+                  <div class="x_title">
+                    <h2><i class="fa fa-exchange"></i> Perbandingan</h2>
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="col-xs-12 bg-white progress_summary">
+
+
+                    <div>
+                      <p>Laki-laki</p>
+                      <div class="">
+                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                          <div class="progress-bar bg-blue" role="progressbar" data-transitiongoal="40" style="height: 20px !important;">40%</div>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div>
+                      <p>Perempuan</p>
+                      <div class="">
+                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
+                          <div class="progress-bar bg-red" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
                   <div class="x_title">
@@ -100,38 +128,7 @@
                       
 
                     </div>
-                  
-
                 </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
-                  <div class="x_title">
-                    <h2>Jumlah Penduduk</h2>
-                    <div class="clearfix"></div>
-                  </div>
-
-                  <div class="col-xs-12 bg-white progress_summary">
-
-
-                    <div>
-                      <p>Laki-laki</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-blue" role="progressbar" data-transitiongoal="40" style="height: 20px !important;">40%</div>
-                        </div>
-
-                      </div>
-                    </div>
-                    <div>
-                      <p>Perempuan</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-red" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-              </div>
               <div class="clearfix"></div>
             </div>
 

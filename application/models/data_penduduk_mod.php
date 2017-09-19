@@ -41,5 +41,25 @@ class data_penduduk_mod extends CI_Model {
 			)";
 			return $this->db->query($q);
 	}
+	function get_data_stat_kawin(){
+		$q="SELECT SUM(BELUM_KAWIN) AS BK, SUM(KAWIN) AS K, SUM(CERAI_HIDUP) AS CH, SUM(CERAI_MATI) AS CM FROM V_CAPIL_STAT_KAWIN";
+		return $this->db->query($q);
+	}
+	function get_data_pendidikan_tot(){
+		$q="SELECT SUM(TIDAK_BLM_SEKOLAH) AS BLM_SEKOLAH, SUM(BELUM_TAMAT_SD_SEDERAJAT) AS BLM_TMT_SD, SUM(TAMAT_SD_SEDERAJAT) AS TMT_SD, SUM(SLTP_SEDERAJAT) AS SLTP, SUM(SLTA_SEDERAJAT) AS SLTA, SUM(D_I_II) AS D_I_II, SUM(DIII_SARJANA_MUDA) AS DIII, SUM(DIV_SI) AS SI, SUM(SII) AS SII, SUM(SIII) AS SIII 
+			FROM V_CAPIL_PENDIDIKAN";
+		return $this->db->query($q);
+	}
+	function get_data_usia($r_umur1="",$r_umur2=""){
+		$q="SELECT COUNT(*) AS TOT_UMR FROM 
+			(
+			  SELECT ROUND(UMUR) AS UMR FROM
+			  (
+			    SELECT MONTHS_BETWEEN(SYSDATE, TGL_LHR)/12 AS UMUR FROM V_CAPIL_WNI
+			  ) 
+			) S
+			WHERE S.UMR>='$r_umur1' AND S.UMR<='$r_umur2'";
+		return $this->db->query($q);
+	}
 }
 ?>

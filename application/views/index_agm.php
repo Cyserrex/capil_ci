@@ -39,7 +39,7 @@
 
                 <div class="row x_title">
                   <div class="col-md-6">
-                    <h3><i class="fa fa-line-chart"></i> Penduduk <small>Grafik pertumbuhan penduduk per Agama</small></h3>
+                    <h3 style="padding-top: 7%;"><i class="fa fa-line-chart"></i> Penduduk <small>Grafik pertumbuhan penduduk per Agama</small></h3>
                   </div>
                 <div class="pull-right">                 
                   <div class="col-md-12">
@@ -66,7 +66,7 @@
                 </div>
                 <div class="col-md-4">
                   <div class="x_title">
-                    <h2>Jumlah Agama</h2>
+                    <h2><i class="fa fa-exchange"></i> Perbandingan</h2>
                     <div class="clearfix"></div>
                   </div>
                   <?php
@@ -205,27 +205,27 @@
     <script src="<?=base_url()?>vendor/cart/chartist.js"></script>
 
     <script type="text/javascript">
-new Chartist.Line('.ct-chart', {
-  labels: ['2015', '2016', '2017'],
-  series: [
-    [<?php echo $ISLAM ?>, 0, 0],
-    [<?php echo $KRISTEN ?>, 0, 0],
-    [<?php echo $KATHOLIK ?>, 0, 0],
-    [<?php echo $HINDU ?>, 0, 0],
-    [<?php echo $BUDHA ?>, 0, 0],
-    [<?php echo $KHONGHUCU ?>, 0, 0],
-    [<?php echo $KEPERCAYAAN ?>, 0, 0]
-  ],
-}, {
-  fullWidth: true,
-  chartPadding: {
-    right: 40
-  },
-  axisY: {
-          onlyInteger: false,
-          offset: 45
-        }
-});
+    new Chartist.Line('.ct-chart', {
+      labels: ['2015', '2016', '2017'],
+      series: [
+        [<?php echo $ISLAM ?>, 0, 0],
+        [<?php echo $KRISTEN ?>, 0, 0],
+        [<?php echo $KATHOLIK ?>, 0, 0],
+        [<?php echo $HINDU ?>, 0, 0],
+        [<?php echo $BUDHA ?>, 0, 0],
+        [<?php echo $KHONGHUCU ?>, 0, 0],
+        [<?php echo $KEPERCAYAAN ?>, 0, 0]
+      ],
+    }, {
+      fullWidth: true,
+      chartPadding: {
+        right: 40
+      },
+      axisY: {
+              onlyInteger: false,
+              offset: 45
+            }
+    });
     </script>
   
   </body>
