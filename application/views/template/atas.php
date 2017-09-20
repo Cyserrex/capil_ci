@@ -22,8 +22,6 @@
   
     <!-- bootstrap-progressbar -->
     <link href="<?=base_url()?>vendor/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
-    <!-- JQVMap -->
-    <link href="<?=base_url()?>vendor/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
     <link href="<?=base_url()?>vendor/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
@@ -31,8 +29,6 @@
     <link href="<?=base_url()?>css/custom.min.css" rel="stylesheet">
 
     <link href="<?=base_url()?>css/capil.css" rel="stylesheet">
-
-    <link href="<?=base_url()?>vendor/cart/chartist.css" rel="stylesheet">
   </head>
     <body class="nav-md">
     <div class="container body">
