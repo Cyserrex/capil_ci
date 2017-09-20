@@ -63,7 +63,15 @@
                   </li>
                   <li><a><i class="fa fa-edit"></i> Data Penduduk <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="form.html">General Form</a></li>                     
+                      <li><a href="<?=base_url()?>utama2">Jumlah Penduduk</a></li>
+                      <li><a href="<?=base_url()?>utama2/kecamatan">Jumlah Kecamatan</a></li>
+                      <li><a href="<?=base_url()?>utama2/kelurahan">Jumlah Kelurahan</a></li>
+                      <li><a href="<?=base_url()?>utama2/agama">Jumlah Agama</a></li>
+                      <li><a href="<?=base_url()?>utama2/pekerjaan">Jumlah Pekerjaan</a></li>
+                      <li><a href="<?=base_url()?>utama2/kelahiran">Jumlah Kelahiran & Kematian</a></li>
+                      <li><a href="<?=base_url()?>utama2/status">Jumlah Status</a></li>
+                      <li><a href="<?=base_url()?>utama2/wni">Jumlah WNA dan WNI</a></li>
+                      <li><a href="<?=base_url()?>utama2/kitas">Jumlah KITAS</a></li>                   
                     </ul>
                   </li>       
                 </ul>
