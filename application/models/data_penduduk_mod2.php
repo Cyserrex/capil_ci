@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class data_penduduk_mod extends CI_Model {
+class Data_penduduk_mod2 extends CI_Model {
  	function __construct() {
  		parent::__construct();
  	}
