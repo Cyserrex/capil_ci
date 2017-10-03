@@ -7,3 +7,18 @@
 .x_title span {
 	color: #73879c !important;
 }
+.nav_menu {
+	padding-bottom: 0px !important;
+}
+#data_detail_map > tbody >tr >td:nth-child(1), td:nth-child(2){
+	padding-right: 5px;
+}
+#data_detail_map > tbody >tr >td{
+	vertical-align: top;
+}
+.imagepreview {
+	border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}

@@ -1,5 +1,7 @@
     <!-- Bootstrap -->
     <script src="<?=base_url()?>vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Table -->
+    <script src="<?=base_url()?>vendor/bootstrap-datatables/jquery.dataTables.min.js"></script>
     <!-- FastClick -->
     <script src="<?=base_url()?>vendor/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->

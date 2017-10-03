@@ -19,13 +19,13 @@
           </div>
           <!-- /top tiles -->
 
-          <div class="row">
+        <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="dashboard_graph">
 
                 <div class="row x_title">
                   <div class="col-md-6">
-                    <h3 style="padding-top: 7%;"><i class="fa fa-line-chart"></i> Penduduk <small>Grafik pertumbuhan penduduk per Kecamatan</small></h3>
+                    <h2 style="padding-top: 7%;"><i class="fa fa-line-chart"></i> Grafik Penduduk Per Kecamatan</h2>
                   </div>
                 <div class="pull-right">
                   <div class="col-md-7">
@@ -56,7 +56,7 @@
 
                 <div class="col-md-9 col-sm-9 col-xs-12">
                   <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
-                  <div id="container2" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
                   <div class="x_title">
@@ -132,9 +132,64 @@
 
           </div>
           <br />
+        </div>
+        <div class="row">
+       <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="dashboard_graph">
+        <div class="x_title">
+          <h2><i class="fa fa-map"></i> Sebaran Penduduk Per Kecamatan</h2>
+          <div class="clearfix"></div>
+        </div>
+            <script src="<?=base_url()?>vendor/highcharts/code/highmaps.js"></script>
+            <div id="container2" style="min-width: 510px; max-width: 1000px; height: 700px; margin: 0 auto"></div>
+            <!-- MODAL POP UP KECAMATAN -->
+            <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="modal_kec" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Tutup</span></button>
+                  <h4 class="modal-title nama_kec"></h4>
+                </div>              
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <table id="data_detail_map">
+                        <tr>
+                          <td><b>Alamat</b></td>
+                          <td>:</td>
+                          <td>Tes</td>
+                        </tr>
+                        <tr>
+                          <td><b>Camat</b></td>
+                          <td>:</td>
+                          <td>Tes</td>
+                        </tr>
+                        <tr>
+                          <td><b>Telepon</b></td>
+                          <td>:</td>
+                          <td>Tes</td>
+                        </tr>
+                        <tr>
+                          <td><b>Luas</b></td>
+                          <td>:</td>
+                          <td>Tes</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="col-md-8">
+                      <img src="" class="imagepreview" style="width: 100%;" >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-
-         </div>
+        <div class="clearfix"></div>
+        </div>
+       </div>
+      </div>
+        
         <!-- /page content -->
 
         <!-- footer content -->
@@ -192,74 +247,102 @@
         },
         series: [{
             name: 'Banjarmasin Selatan',
-            data: [<?php echo $BJM_SELATAN ?>, 0, 0]
+            data: [<?php echo $kec[4]['JML_PEND'] ?>, 0, 0]
 
         }, {
             name: 'Banjarmasin Timur',
-            data: [<?php echo $BJM_TIMUR ?>, 0, 0]
+            data: [<?php echo $kec[3]['JML_PEND'] ?>, 0, 0]
 
         }, {
             name: 'Banjarmasin Barat',
-            data: [<?php echo $BJM_BARAT ?>, 0, 0]
+            data: [<?php echo $kec[2]['JML_PEND'] ?>, 0, 0]
 
         }, {
             name: 'Banjarmasin Utara',
-            data: [<?php echo $BJM_UTARA ?>, 0, 0]
+            data: [<?php echo $kec[0]['JML_PEND'] ?>, 0, 0]
 
         }, {
             name: 'Banjarmasin Tengah',
-            data: [<?php echo $BJM_TENGAH ?>, 0, 0]
+            data: [<?php echo $kec[1]['JML_PEND'] ?>, 0, 0]
 
         }]
     });
 
-    Highcharts.chart('container2', {
-        chart: {
-            type: 'column'
+// Instanciate the map
+$(function () {
+
+    // Initiate the chart
+    $('#container2').highcharts('Map', {
+      title: {
+            text: 'Kepadatan Penduduk'
+      },
+      mapNavigation: {
+            enabled: true,
+            enableDoubleClickZoomTo: true
         },
-        title: {
-            text: false
+      colorAxis: {
+            min: 1,
+            max: 225000,
+            minColor: '#afafff',
+            maxColor: '#00005b',
         },
-        xAxis: {
-            categories: [
-                'Banjarmasin Selatan',
-                'Banjarmasin Timur',
-                'Banjarmasin Barat',
-                'Banjarmasin Utara',
-                'Banjarmasin Tengah'
-            ],
-            crosshair: true
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Jumlah Penduduk'
+      series: [
+      {
+        point:{
+            events:{
+                click: function(){
+                    $('.imagepreview').attr('src', '<?=base_url()?>gambar/kantor_kecamatan/'+this.gbr);
+                    $('.nama_kec').text('Kecamatan '+this.name);
+                    $('#imagemodal').modal('show');
+                }
             }
         },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">Tahun {point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.0f}</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
+        "cursor": 'pointer',    
+        "type": "map",
+        "name": "Kepadatan",
+        "data": [
+        <?php 
+        foreach ($kec as $row)
+        {
+        ?>
+          {
+            "name": "<?php echo ucwords(strtolower($row['NAMA_KEC'])) ?>",
+            "value": "<?php echo $row['JML_PEND'] ?>",
+            "lk" : "<?php echo $row['PRIA'] ?>",
+            "prm" : "<?php echo $row['WANITA'] ?>",
+            "gbr" : "<?php echo $row['gbr'] ?>",
+            "path": "<?php echo $row['koor'] ?>"
+          },
+        <?php
+        }
+        ?>
+        ],
+        dataLabels: {
+            enabled: true,
+            format: '{point.name}',
+            style: {
+                color: '#000000'
+            }
+        }
+      }
+    ],
+    tooltip: {
+            backgroundColor: 'none',
+            borderWidth: 0,
+            shadow: false,
+            useHTML: true,
+            padding: 0,
+            pointFormat: '<span class="f32"><span class="flag {point.flag}">' +
+                '</span></span> {point.name}<br>' +
+                '<span style="font-size:25px">{point.value} Jiwa</span><br>' +
+                '<span style="font-size:20px"><i class="fa fa-male"></i> {point.lk} Jiwa</span><br>' +
+                '<span style="font-size:20px"><i class="fa fa-female"></i> {point.prm} Jiwa</span>',
+            positioner: function () {
+                return { x: 0, y: 250 };
             }
         },
-        series: [{
-            name: 'Laki-laki',
-            data: [<?php echo $BJM_SELATAN_LK ?>, <?php echo $BJM_TIMUR_LK ?>, <?php echo $BJM_BARAT_LK ?>, <?php echo $BJM_UTARA_LK ?>, <?php echo $BJM_TENGAH_LK ?>]
-
-        }, {
-            name: 'Perempuan',
-            data: [<?php echo $BJM_SELATAN_PR ?>, <?php echo $BJM_TIMUR_PR ?>, <?php echo $BJM_BARAT_PR ?>, <?php echo $BJM_UTARA_PR ?>, <?php echo $BJM_TENGAH_PR ?>]
-
-        }]
     });
+});
     </script>
   
   

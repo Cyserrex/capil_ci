@@ -4,11 +4,11 @@
           <div class="row tile_count">
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-map"></i> Total Kelurahan</span>
-              <div class="count green"><?php echo $TOTAL_KEL ?></div>
+              <div class="count green">123</div>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-map"></i> Total <b>RT</b> /Kelurahan</span>
-              <div class="count green"><?php echo $TOTAL_RT ?></div>
+              <div class="count green">456</div>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-map"></i> Total <b>RW</b> /Kelurahan</span>
@@ -25,7 +25,7 @@
 
                 <div class="row x_title">
                   <div class="col-md-6">
-                    <h3 style="padding-top: 7%;"><i class="fa fa-line-chart"></i> Penduduk <small>Grafik pertumbuhan penduduk per Kelurahan</small></h3>
+                    <h2 style="padding-top: 7%;"><i class="fa fa-line-chart"></i> Grafik Penduduk Per Kelurahan</h2>
                   </div>
                 <div class="pull-right">
                   <div class="col-md-7">
@@ -55,10 +55,8 @@
                 </div>
 
                 <div class="col-md-9 col-sm-9 col-xs-12">
-                  <div class="ct-chart ct-golden-section"></div>
+                  <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
                 
-
-                  <!--div id="chart_plot_01" class="demo-placeholder"></div-->
                 </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
                   <div class="x_title">
@@ -131,6 +129,63 @@
             </div>
           </div>
         </div>
+
+ <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="dashboard_graph">
+        <div class="x_title">
+          <h2><i class="fa fa-map"></i> Sebaran Penduduk Per Kelurahan</h2>
+          <div class="clearfix"></div>
+        </div>
+            <script src="<?=base_url()?>vendor/highcharts/code/highmaps.js"></script>
+            <div id="container2" style="min-width: 510px; max-width: 1000px; height: 700px; margin: 0 auto"></div>
+            <!-- MODAL POP UP KELURAHAN -->
+            <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="modal_kel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Tutup</span></button>
+                  <h4 class="modal-title nama_kel"></h4>
+                </div>              
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <table id="data_detail_map">
+                        <tr>
+                          <td><b>Alamat</b></td>
+                          <td>:</td>
+                          <td>Belum ada dalam database</td>
+                        </tr>
+                        <tr>
+                          <td><b>Lurah</b></td>
+                          <td>:</td>
+                          <td>Belum ada dalam database</td>
+                        </tr>
+                        <tr>
+                          <td><b>Telepon</b></td>
+                          <td>:</td>
+                          <td>Belum ada dalam database</td>
+                        </tr>
+                        <tr>
+                          <td><b>Luas</b></td>
+                          <td>:</td>
+                          <td>Belum ada dalam database</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="col-md-8">
+                      <img src="" class="imagepreview" style="width: 100%;" >
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+
+
+        <div class="clearfix"></div>
+        </div>
+       </div>
+      </div>
         <!-- /page content -->
 
         <!-- footer content -->
@@ -143,29 +198,149 @@
         <!-- /footer content -->
       </div>
     </div>
-    <script src="<?=base_url()?>vendor/cart/chartist.js"></script>
-
+    <script src="<?=base_url()?>vendor/highcharts/code/highcharts.js"></script>
+    <script src="<?=base_url()?>vendor/highcharts/code/modules/exporting.js"></script>
     <script type="text/javascript">
-      new Chartist.Line('.ct-chart', {
-        labels: [2012, 2013, 2014, 2015, 2016, 2017],
-        series: [
-          [700, 800, 900, 1000, 1100, 1200],
-          [600, 700, 800, 900, 1000, 1100],
-        ]
-      }, {
-        width: 800,
-        height: 400,
-        fullWidth: true,
-        
-        axisY: {
-          onlyInteger: false,
-          offset: 50
-        },
-        //Untuk Mempaskan Tahun
-        chartPadding: {
-          right: 50
+    Highcharts.setOptions({
+        lang: {
+            numericSymbols: [' Ribu', ' Juta']
         }
-      });
+    });
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: false
+        },
+        xAxis: {
+            categories: [
+                '2015',
+                '2016',
+                '2017'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Jumlah Penduduk'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">Tahun {point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.0f}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            name: 'Kelurahan1',
+            data: [123, 0, 0]
+
+        }, {
+            name: 'Kelurahan2',
+            data: [345, 0, 0]
+
+        }, {
+            name: 'Kelurahan3',
+            data: [413, 0, 0]
+
+        }, {
+            name: 'Kelurahan4',
+            data: [562, 0, 0]
+
+        }, {
+            name: 'Kelurahan5',
+            data: [222, 0, 0]
+
+        }]
+    });
+
+// Instanciate the map
+$(function () {
+
+    // Initiate the chart
+    $('#container2').highcharts('Map', {
+      title: {
+            text: 'Kepadatan Penduduk'
+      },
+      legend: {
+                layout: 'vertical',
+                align: 'left',
+                verticalAlign: 'bottom'
+            },
+      mapNavigation: {
+            enabled: true,
+            enableDoubleClickZoomTo: true
+        },
+      colorAxis: {
+            min: 1,
+            max: 40000,
+            minColor: '#afafff',
+            maxColor: '#00005b',
+        },
+      series: [ { 
+        point:{
+            events:{
+                click: function(){
+                    $('.imagepreview').attr('src', '<?=base_url()?>gambar/kantor_kelurahan/'+this.gbr);
+                    $('.nama_kel').text('Kelurahan '+this.name);
+                    $('#imagemodal').modal('show');
+                }
+            }
+        },
+        "cursor": 'pointer',
+        "type": "map",
+        "name": "Kepadatan",
+        "data": [
+      <?php 
+        foreach ($kel as $row)
+        {
+        ?>
+          {
+            "name": "<?php echo ucwords(strtolower($row['NAMA_KEL'])) ?>",
+            "value": "<?php echo $row['JML_PEND'] ?>",
+            "lk" : "<?php echo $row['PRIA'] ?>",
+            "prm" : "<?php echo $row['WANITA'] ?>",
+            "gbr" : "<?php echo $row['gbr'] ?>",
+            "path": "<?php echo $row['koor'] ?>"
+          },
+        <?php
+        }
+        ?>
+    ],
+        dataLabels: {
+            enabled: true,
+            format: '{point.name}',
+            style: {
+                color: '#000000'
+            }
+        } } ],
+    tooltip: {
+            backgroundColor: 'none',
+            borderWidth: 0,
+            shadow: false,
+            useHTML: true,
+            padding: 0,
+            pointFormat: '<span class="f32"><span class="flag {point.flag}">' +
+                '</span></span> {point.name}<br>' +
+                '<span style="font-size:25px">{point.value} Jiwa</span><br>' +
+                '<span style="font-size:20px"><i class="fa fa-male"></i> {point.lk} Jiwa</span><br>' +
+                '<span style="font-size:20px"><i class="fa fa-female"></i> {point.prm} Jiwa</span>',
+            positioner: function () {
+                return { x: 0, y: 250 };
+            }
+        },
+    });
+});
     </script>
   
   </body>

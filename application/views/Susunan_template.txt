@@ -1,0 +1,14 @@
+<div class="row">
+ <div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="dashboard_graph">
+	<div class="x_title">
+                          <h2><i class="fa fa-calendar-o"></i> Usia</h2>
+                          <div class="clearfix"></div>
+        </div>
+
+	ISI...........	
+
+   	<div class="clearfix"></div>
+  </div>
+ </div>
+</div>

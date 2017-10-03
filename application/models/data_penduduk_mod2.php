@@ -48,16 +48,15 @@ class Data_penduduk_mod2 extends CI_Model {
 			)";
 			return $this->db->query($q);
 	}
+	function get_data_kel(){
+		$q="SELECT NAMA_KEL, JML_PEND, PRIA, WANITA FROM V_CAPIL_AGANJK ORDER BY NAMA_KEL ASC";
+		return $this->db->query($q);
+	}
 	function get_data_kec(){
-		$q="SELECT COUNT(CASE WHEN NAMA_KEC='BANJARMASIN UTARA' THEN 1 ELSE NULL END) AS BJM_UTARA,
-			COUNT(CASE WHEN NAMA_KEC='BANJARMASIN SELATAN' THEN 1 ELSE NULL END) AS BJM_SELATAN,
-			COUNT(CASE WHEN NAMA_KEC='BANJARMASIN TIMUR' THEN 1 ELSE NULL END) AS BJM_TIMUR,
-			COUNT(CASE WHEN NAMA_KEC='BANJARMASIN BARAT' THEN 1 ELSE NULL END) AS BJM_BARAT,
-			COUNT(CASE WHEN NAMA_KEC='BANJARMASIN TENGAH' THEN 1 ELSE NULL END) AS BJM_TENGAH
-			FROM V_CAPIL_WNI";
+		$q="SELECT NAMA_KEC, SUM(JML_PEND) AS JML_PEND, SUM(PRIA) AS PRIA, SUM(WANITA) AS WANITA FROM V_CAPIL_AGANJK GROUP BY NAMA_KEC";
 			return $this->db->query($q);
 	}
-	function get_data_jk_kec($nama_kec=""){
+	function get_data_jk_kec($nama_kec=""){ //NOT
 		$q="SELECT COUNT(CASE WHEN JK='PEREMPUAN' THEN 1 ELSE NULL END) AS PRM, COUNT(CASE WHEN JK='LAKI-LAKI' THEN 1 ELSE NULL END) AS LK FROM V_CAPIL_WNI
 			WHERE NAMA_KEC='$nama_kec'";
 			$data = $this->db->query($q);
@@ -81,7 +80,15 @@ class Data_penduduk_mod2 extends CI_Model {
 			  ) 
 			) S
 			WHERE S.UMR>='$r_umur1' AND S.UMR<='$r_umur2'";
-		return $this->db->query($q);
+		$data = $this->db->query($q);
+		return $data->row();
+	}
+	function tes(){
+		$q="SELECT SUM(TIDAK_BLM_SEKOLAH) AS BLM_SEKOLAH, SUM(BELUM_TAMAT_SD_SEDERAJAT) AS BLM_TMT_SD, SUM(TAMAT_SD_SEDERAJAT) AS TMT_SD, SUM(SLTP_SEDERAJAT) AS SLTP, SUM(SLTA_SEDERAJAT) AS SLTA, SUM(D_I_II) AS D_I_II, SUM(DIII_SARJANA_MUDA) AS DIII, SUM(DIV_SI) AS SI, SUM(SII) AS SII, SUM(SIII) AS SIII 
+			FROM V_CAPIL_PENDIDIKAN";
+			$data = $this->db->query($q);
+			return $data->result_array();
+
 	}
 }
 ?>

@@ -9,10 +9,12 @@
 
     <title><?php echo $TITLE ?></title>
     
-      <!-- jQuery -->
+    <!-- jQuery -->
     <script src="<?=base_url()?>vendor/jquery/dist/jquery.min.js"></script>
-        <!-- Bootstrap -->
+    <!-- Bootstrap -->
     <link href="<?=base_url()?>vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Table -->
+    <link href="<?=base_url()?>vendor/bootstrap-datatables/dataTables.bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="<?=base_url()?>vendor/fortawesome/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
@@ -147,7 +149,23 @@
               </div>
 
               <ul class="nav navbar-nav navbar-right">
-               
+                 <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="<?=base_url()?>css/images/user.png" alt="">Admin Capil
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profil</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Pengaturan</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Bantuan</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Keluar</a></li>
+                  </ul>
+                </li>
               <!-- BAR ATAS -->
 
               </ul>
