@@ -16,7 +16,9 @@ class Utama2 extends CI_Controller {
 		$data = $this->data_penduduk_mod2->get_data_pendidikan_tot();
 		$pend['pen'] = $data->row();
 
-		//Karena server database lambat
+		$data = $this->data_penduduk_mod2->get_data_gol_darah();
+		$pend['darah'] = $data->row();
+
 		$pend['usia'] = array(
 			'U0_4' => $this->data_penduduk_mod2->get_data_usia('0','4')->TOT_UMR,
 			'U5_9' => $this->data_penduduk_mod2->get_data_usia('5','9')->TOT_UMR,

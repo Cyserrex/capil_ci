@@ -18,76 +18,41 @@
               <div class="count"><i class="fa fa-female"></i> <?php echo number_format($p->PRM, 0, ',', '.'); ?></div>
               <!--span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> Dari tahun lalu</span-->
             </div>
+            <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"></i> Perbandingan</span>
+              <?php
+              $persen_prm = round(($p->PRM / $p->TOTAL) * 100,2);
+              $persen_lk = round(($p->LK / $p->TOTAL) * 100,2);
+              ?>
+                <div class="row">
+                  <div class="col-md-4">
+                    <span><b>Laki-laki</b></span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="progress progress_sm" style="display: inline-block; margin: 0 0 0 5px; width: 100%; height: 20px !important;">
+                      <div class="progress-bar bg-blue" role="progressbar" data-transitiongoal="<?php echo $persen_lk ?>" style="height: 20px !important;"><?php echo $persen_lk ?>%</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <span><b>Perempuan</b></span>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="progress progress_sm" style="display: inline-block; margin: 0 0 0 5px; width: 100%; height: 20px !important;">
+                      <div class="progress-bar bg-red" role="progressbar" data-transitiongoal="<?php echo $persen_prm ?>" style="height: 20px !important;"><?php echo $persen_prm ?>%</div>
+                    </div>
+                  </div>
+                </div>
+            </div>
             
           </div>
           <!-- /top tiles -->
 
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="dashboard_graph">
-
-                <div class="row x_title">
-                  <div class="col-md-6">
-                    <h3 style="padding-top: 7%;"><i class="fa fa-line-chart"></i> Penduduk <small>Grafik pertumbuhan penduduk</small></h3>
-                  </div>
-                <div class="pull-right">                  
-                  <div class="col-md-12">
-                    <div style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-                      <i class="fa fa-calendar"></i>
-                      <label for="exampleSelect1">Tahun</label>
-                      <select class="form-control" id="exampleSelect1">
-                        <option>2013</option>
-                        <option>2014</option>
-                        <option>2015</option>
-                        <option>2016</option>
-                        <option>2017</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                </div>
-
-                <div class="col-md-9 col-sm-9 col-xs-12">
-                <div id="container1" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
-                  <div class="x_title">
-                    <h2><i class="fa fa-exchange"></i> Perbandingan</h2>
-                    <div class="clearfix"></div>
-                  </div>
-                  <?php
-                  $persen_prm = round(($p->PRM / $p->TOTAL) * 100,2);
-                  $persen_lk = round(($p->LK / $p->TOTAL) * 100,2);
-                  ?>
-                  <div class="col-md-12 col-sm-12 col-xs-6">
-                    <div>
-                      <p>Laki-laki</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-blue" role="progressbar" data-transitiongoal="<?php echo $persen_lk ?>" style="height: 20px !important;"><?php echo $persen_lk ?>%</div>
-                        </div>
-
-                      </div>
-                    </div>
-                    <div>
-                      <p>Perempuan</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-red" role="progressbar" data-transitiongoal="<?php echo $persen_prm ?>" style="height: 20px !important;"><?php echo $persen_prm ?>%</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="clearfix"></div>
-              </div>
-            </div>
-          </div>
 
           <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="dashboard_graph">
-                <div class="col-md-4 col-sm-3 col-xs-12">
+                <div class="col-md-4 col-sm-4 col-xs-4">
                         <div class="x_title">
                           <h2><i class="fa fa-graduation-cap"></i> Pendidikan</h2>
                           <div class="clearfix"></div>
@@ -112,7 +77,7 @@
                         </div>
                 </div>
 
-                <div class="col-md-4 col-sm-3 col-xs-12" style="margin-left: 5px;">
+                <div class="col-md-4 col-sm-4 col-xs-4">
                         <div class="x_title">
                           <h2><i class="fa fa-calendar-o"></i> Usia</h2>
                           <div class="clearfix"></div>
@@ -123,19 +88,30 @@
                         </div>
                 </div>
 
-                <div class="col-md-4 col-sm-5 col-xs-12" style="margin-left: 5px;">
+                <div class="col-md-4 col-sm-4 col-xs-4">
                   <div class="x_title">
-                    <h2><i class="fa fa-pie-chart"></i> Pie</h2>
-                    <div class="clearfix"></div>
+                      <h2><i class="fa fa-tint"></i> Golongan Darah</h2>
+                      <div class="clearfix"></div>
                   </div>
+                  <div class="col-md-12 col-sm-12 col-xs-6">
                       <div id="container2" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                  </div>
                 </div>
 
                 <div class="clearfix"></div>
               </div>
-            </div>
           </div>
 
+          <div class="row">
+           <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="dashboard_graph">
+
+             <!-- ISI2 -->
+
+              <div class="clearfix"></div>
+            </div>
+           </div>
+          </div>
           
 
           <br />
@@ -164,58 +140,6 @@
             numericSymbols: [' Ribu', ' Juta']
         }
     });
-    //CHART GRAPH
-    Highcharts.chart('container1', {
-
-    title: {
-        text: false
-    },
-
-    yAxis: {
-        title: {
-            text: 'Jumlah Penduduk'
-        }
-    },
-    xAxis: {
-            categories: [
-                '2015',
-                '2016',
-                '2017'
-            ],
-            crosshair: true
-        },
-    legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'middle'
-    },
-
-
-    series: [{
-        name: 'Laki-laki',
-        data: [<?php echo $p->LK ?>, 0, 0]
-    }, {
-        name: 'Perempuan',
-        data: [<?php echo $p->PRM ?>, 0, 0]
-    }]
-
-});
-
-
-
-      Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function (color) {
-    return {
-        radialGradient: {
-            cx: 0.5,
-            cy: 0.3,
-            r: 0.7
-        },
-        stops: [
-            [0, color],
-            [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
-        ]
-    };
-});
 
       //CHART PENDIDIKAN
       Highcharts.chart('pendidikan', {
@@ -373,44 +297,47 @@
               type: 'pie'
           },
           title: {
-              text: 'Capil PIE'
+              text: false
           },
           tooltip: {
-              pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+              pointFormat: '{series.name}: <b>{point.y:.0f}</b>'
           },
           plotOptions: {
               pie: {
                   allowPointSelect: true,
                   cursor: 'pointer',
                   dataLabels: {
-                      enabled: false
+                      enabled: true,
+                      format: '<b>{point.name}</b>: {point.percentage:.1f}%</b>',
+                      style: {
+                          color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                      },
+                      connectorColor: 'silver'
                   },
                   showInLegend: true
               }
           },
           series: [{
-              name: 'Angkanya',
+              name: 'Total',
               colorByPoint: true,
               data: [{
-                  name: 'Satu',
-                  y: 56.33
+                  name: 'A',
+                  y: <?php echo $darah->GOL_A ?>
               }, {
-                  name: 'Dua',
-                  y: 24.03,
-                  sliced: true,
-                  selected: true
+                  name: 'B',
+                  y: <?php echo $darah->GOL_B ?>
               }, {
-                  name: 'Tiga',
-                  y: 10.38
+                  name: 'O',
+                  y: <?php echo $darah->GOL_O ?>
               }, {
-                  name: 'Empat',
-                  y: 4.77
+                  name: 'AB',
+                  y: <?php echo $darah->GOL_AB ?>
               }, {
-                  name: 'Lima',
-                  y: 0.91
+                  name: 'AB+',
+                  y: <?php echo $darah->GOL_AB_PLUS ?>
               }, {
-                  name: 'Enam',
-                  y: 0.2
+                  name: 'AB-',
+                  y: <?php echo $darah->GOL_AB_MIN ?>
               }]
           }]
       });

@@ -19,125 +19,15 @@
           </div>
           <!-- /top tiles -->
 
-        <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="dashboard_graph">
-
-                <div class="row x_title">
-                  <div class="col-md-6">
-                    <h2 style="padding-top: 7%;"><i class="fa fa-line-chart"></i> Grafik Penduduk Per Kelurahan</h2>
-                  </div>
-                <div class="pull-right">
-                  <div class="col-md-7">
-                    <div style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-                      <i class="fa fa-map-marker"></i>
-                      <label for="exampleSelect1">Kelurahan</label>
-                      <select class="form-control" id="exampleSelect1">
-                        <option>Sungai Miai</option>
-                        <option>Pangeran</option>                        
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-md-5">
-                    <div style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-                      <i class="fa fa-calendar"></i>
-                      <label for="exampleSelect1">Tahun</label>
-                      <select class="form-control" id="exampleSelect1">
-                        <option>2013</option>
-                        <option>2014</option>
-                        <option>2015</option>
-                        <option>2016</option>
-                        <option>2017</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                </div>
-
-                <div class="col-md-9 col-sm-9 col-xs-12">
-                  <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
-                
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
-                  <div class="x_title">
-                    <h2><i class="fa fa-exchange"></i> Perbandingan</h2>
-                    <div class="clearfix"></div>
-                  </div>
-
-                  <div class="col-xs-12 bg-white progress_summary">
-                    <div>
-                      <p>Laki-laki</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-blue" role="progressbar" data-transitiongoal="40" style="height: 20px !important;">40%</div>
-                        </div>
-
-                      </div>
-                    </div>
-                    <div>
-                      <p>Perempuan</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 100%; height: 20px !important;">
-                          <div class="progress-bar bg-red" role="progressbar" data-transitiongoal="60" style="height: 20px !important;">60%</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
-                  <div class="x_title">
-                    <h2>Jumlah RT dan RW</h2>
-                    <div class="clearfix"></div>
-                  </div>
-
-                  <div class="col-xs-12 bg-white progress_summary">
-
-                      <div class="row">
-                        
-                        <div class="col-xs-2">
-                          <span>RT</span>
-                        </div>
-                        <div class="col-xs-8">
-                          <div class="progress progress_sm">
-                            <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="89"></div>
-                          </div>
-                        </div>
-                        <div class="col-xs-2 more_info">
-                          <span>89</span>
-                        </div>
-                      </div>
-                      <div class="row">
-                        
-
-                        <div class="col-xs-2">
-                          <span>RW</span>
-                        </div>
-                        <div class="col-xs-8">
-                          <div class="progress progress_sm">
-                            <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="79"></div>
-                          </div>
-                        </div>
-                        <div class="col-xs-2 more_info">
-                          <span>79</span>
-                        </div>
-                      </div>
-                      
-
-                    </div>               
-                </div>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-        </div>
-
- <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="dashboard_graph">
+  <div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="dashboard_graph">
         <div class="x_title">
           <h2><i class="fa fa-map"></i> Sebaran Penduduk Per Kelurahan</h2>
           <div class="clearfix"></div>
         </div>
             <script src="<?=base_url()?>vendor/highcharts/code/highmaps.js"></script>
-            <div id="container2" style="min-width: 510px; max-width: 1000px; height: 700px; margin: 0 auto"></div>
+            <div id="container2" style="min-width: 510px; max-width: 1500px; height: 700px; margin: 0 auto"></div>
             <!-- MODAL POP UP KELURAHAN -->
             <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="modal_kel" aria-hidden="true">
             <div class="modal-dialog">
@@ -179,13 +69,32 @@
                 </div>
               </div>
           </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  </div>
 
+  <div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="dashboard_graph">
 
-
-        <div class="clearfix"></div>
+        <div class="row x_title">
+          <div class="col-md-6">
+            <h2 style="padding-top: 7%;"><i class="fa fa-line-chart"></i> Grafik Penduduk Per Kelurahan</h2>
+          </div>
         </div>
-       </div>
-      </div>
+        <!-- FULL SIZE col-md-12 -->
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div id="container" style="min-width: 510px; max-width: 1000px; height: 800px; margin: 0 auto"></div>
+        
+        </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
         <!-- /page content -->
 
         <!-- footer content -->
@@ -206,63 +115,40 @@
             numericSymbols: [' Ribu', ' Juta']
         }
     });
-    Highcharts.chart('container', {
-        chart: {
-            type: 'column'
+
+Highcharts.chart('container', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: false
+    },
+    xAxis: {
+            categories: ['2015', '2016', '2017']
+    },
+    yAxis: {
+          title: {
+            text: 'Populasi',
+            align: 'high'
         },
-        title: {
-            text: false
-        },
-        xAxis: {
-            categories: [
-                '2015',
-                '2016',
-                '2017'
-            ],
-            crosshair: true
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Jumlah Penduduk'
+    },
+    credits: {
+        enabled: false
+    },
+    series: [ 
+            <?php 
+            foreach ($kel as $row )
+            {
+            ?>
+              {
+                name: '<?php echo ucwords(strtolower($row["NAMA_KEL"])) ?>',
+                data: [<?php echo $row['JML_PEND'] ?>]
+              },
+            <?php
             }
-        },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">Tahun {point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.0f}</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
-            }
-        },
-        series: [{
-            name: 'Kelurahan1',
-            data: [123, 0, 0]
-
-        }, {
-            name: 'Kelurahan2',
-            data: [345, 0, 0]
-
-        }, {
-            name: 'Kelurahan3',
-            data: [413, 0, 0]
-
-        }, {
-            name: 'Kelurahan4',
-            data: [562, 0, 0]
-
-        }, {
-            name: 'Kelurahan5',
-            data: [222, 0, 0]
-
-        }]
-    });
+            ?>
+    ]
+});
 
 // Instanciate the map
 $(function () {
@@ -271,6 +157,9 @@ $(function () {
     $('#container2').highcharts('Map', {
       title: {
             text: 'Kepadatan Penduduk'
+      },
+      subtitle: {
+        text: 'Scroll untuk memperbesar peta wilayah'
       },
       legend: {
                 layout: 'vertical',
